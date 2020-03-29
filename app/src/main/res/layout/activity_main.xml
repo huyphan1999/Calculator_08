@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Thiết lập Màu cho Lay-Out // Nguyễn Tấn Huy-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#555555"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <!--Thiết lập TextView // Nguyen Huy Thang-->
+    <TextView
+        android:id="@+id/calculatorScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_gravity="end"
+        android:layout_margin="10dp"
+        android:gravity="center_vertical"
+        android:textColor="#fdfdfd"
+        android:fontFamily="sans-serif-thin"
+        android:textSize="80sp"
+        android:textFontWeight="500"/>
+    <!--Thiết Lập Buttuon// Nguyen Huy Thang    -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/n7"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/duong_vien"
+            android:fontFamily="monospace"
+            android:text="7"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/n8"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/duong_vien"
+            android:fontFamily="monospace"
+            android:text="8"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30sp"
+            />
+
+        <Button
+            android:id="@+id/n9"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/duong_vien"
+            android:text="9"
+            android:textColor="@color/colorPrimary"
+            android:fontFamily="monospace"
+
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/division"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/duong_vien_tinh_toan"
+            android:fontFamily="monospace"
+            android:text="÷"
+            android:textColor="@color/colorPrimary"
+            android:textSize="40dp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/n4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/duong_vien"
+            android:text="4"
+            android:textColor="@color/colorPrimary"
+            android:fontFamily="monospace"
+
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/n5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/duong_vien"
+            android:text="5"
+            android:textColor="@color/colorPrimary"
+            android:fontFamily="monospace"
+
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/n6"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/duong_vien"
+            android:text="6"
+            android:textColor="@color/colorPrimary"
+            android:fontFamily="monospace"
+
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/nMultiply"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/duong_vien_tinh_toan"
+            android:fontFamily="monospace"
+            android:text="×"
+            android:textColor="@color/colorPrimary"
+            android:textSize="40dp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/n1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/duong_vien"
+            android:text="1"
+            android:textColor="@color/colorPrimary"
+            android:fontFamily="monospace"
+
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/n2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/duong_vien"
+            android:text="2"
+            android:textColor="@color/colorPrimary"
+            android:fontFamily="monospace"
+
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/n3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/duong_vien"
+            android:text="3"
+            android:textColor="@color/colorPrimary"
+            android:fontFamily="monospace"
+
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/subtract"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/duong_vien_tinh_toan"
+            android:fontFamily="monospace"
+            android:text="-"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30sp"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/n0"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@drawable/duong_vien"
+            android:text="0"
+            android:textColor="@color/colorPrimary"
+            android:fontFamily="monospace"
+
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/dot"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/duong_vien"
+            android:text="."
+            android:textColor="@color/colorPrimary"
+            android:fontFamily="monospace"
+
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/nAdd"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/duong_vien_tinh_toan"
+            android:fontFamily="monospace"
+            android:text="+"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30sp"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/nCancel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/duong_vien_tinh_toan"
+            android:text="C"
+            android:textColor="@color/colorPrimary"
+            android:fontFamily="monospace"
+
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/nEqual"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/duong_vien_tinh_toan"
+            android:text="="
+            android:textColor="@color/colorPrimary"
+            android:fontFamily="monospace"
+
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+    <!--Sử lí sự kiện các nút bấm // Phan Phú Huy   -->
+</LinearLayout>
+
