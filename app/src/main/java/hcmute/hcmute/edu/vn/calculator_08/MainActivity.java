@@ -10,7 +10,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private char operator;
-    private double temp = 0;
+    private double result = 0;
+    private boolean isClear = true;
     private TextView calculatorScreen;
 
     @Override
@@ -41,76 +42,74 @@ public class MainActivity extends AppCompatActivity {
                 final int id = v.getId();
                 switch (id) {
                     case R.id.n0:
-                        calculatorScreen.append("0");
+                        onClickNubmer("0");
 
                         break;
                     case R.id.n1:
-                        calculatorScreen.append("1");
+
+                        onClickNubmer("1");
 
                         break;
                     case R.id.n2:
-                        calculatorScreen.append("2");
+                        onClickNubmer("2");
 
                         break;
                     case R.id.n3:
-                        calculatorScreen.append("3");
+                        onClickNubmer("3");
 
                         break;
                     case R.id.n4:
-                        calculatorScreen.append("4");
+                        onClickNubmer("4");
 
                         break;
                     case R.id.n5:
-                        calculatorScreen.append("5");
+                        onClickNubmer("5");
 
                         break;
                     case R.id.n6:
-                        calculatorScreen.append("6");
+                        onClickNubmer("6");
 
                         break;
                     case R.id.n7:
-                        calculatorScreen.append("7");
+                        onClickNubmer("7");
 
                         break;
                     case R.id.n8:
-                        calculatorScreen.append("8");
+
+                        onClickNubmer("8");
 
                         break;
                     case R.id.n9:
-                        calculatorScreen.append("9");
+                        onClickNubmer("9");
 
                         break;
                     case R.id.nEqual:
-                        calculatorScreen.setText(String.valueOf(cal(operator)));
-
+                        cal();
+                        result=0;
                         break;
                     case R.id.division:
-
+                        cal();
                         operator = '/';
-                        setTemp();
+
                         break;
                     case R.id.dot:
                         calculatorScreen.append(".");
                         break;
                     case R.id.nAdd:
-
+                        cal();
                         operator = '+';
-                        setTemp();
+
                         break;
                     case R.id.nMultiply:
-
+                        cal();
                         operator = 'x';
-                        setTemp();
                         break;
                     case R.id.nCancel:
-                        operator = 'i';
-                        temp = 0;
-                        calculatorScreen.setText("");
+                        clearAll();
                         break;
                     case R.id.subtract:
-
+                        cal();
                         operator = '-';
-                        setTemp();
                         break;
 
                 }
@@ -137,35 +136,61 @@ public class MainActivity extends AppCompatActivity {
         cancel.setOnClickListener(calculatorListener);
     }
 
-    public void setTemp() {
-        temp = Double.parseDouble(calculatorScreen.getText().toString());
-        calculatorScreen.setText("");
-    }
 
     public double getCalScreen() {
-        return Double.parseDouble(calculatorScreen.getText().toString());
+        double temp;
+        try {
+            temp = Double.parseDouble(calculatorScreen.getText().toString());
+        } catch (Exception ref) {
+            // code xử lý ngoại lệ
+            temp = 0;
+        }
+        return temp;
     }
 
-    public double cal(char operator) {
-        double result = 0;
+
+    public void clearAll(){
+        operator = 'i';
+        result = 0;
+        isClear=false;
+        calculatorScreen.setText("0");
+    }
+
+    public void onClickNubmer(String number) {
+        if (isClear) {
+            calculatorScreen.append(number);
+        } else {
+            calculatorScreen.setText("");
+            isClear = true;
+            calculatorScreen.append(number);
+        }
+
+    }
+
+    public double cal() {
         switch (operator) {
             case '+':
-                result = temp + getCalScreen();
+                result += getCalScreen();
                 break;
             case '-':
-                result = temp - getCalScreen();
+                result -= getCalScreen();
                 break;
             case 'x':
-                result = temp * getCalScreen();
+                result *= getCalScreen();
                 break;
             case '/':
                 if (getCalScreen() != 0) {
-                    result = temp / getCalScreen();
+                    result /= getCalScreen();
                 }
                 break;
             default:
+                result=getCalScreen();
                 break;
         }
+
+        isClear=false;
+
+        calculatorScreen.setText(String.valueOf(result));
 
         return result;
     }
