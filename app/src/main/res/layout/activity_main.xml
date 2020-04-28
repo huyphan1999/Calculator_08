@@ -18,6 +18,9 @@
         android:gravity="center_vertical"
         android:textColor="#fdfdfd"
         android:fontFamily="sans-serif-thin"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="20sp"
+        app:autoSizeMaxTextSize="80sp"
         android:textSize="80sp"
         android:textFontWeight="500"/>
     <!--Thiết Lập Buttuon// Nguyen Huy Thang    -->
@@ -266,6 +269,6 @@
 
     </LinearLayout>
 
-    <!--Sử lí sự kiện các nút bấm // Phan Phú Huy   -->
+    <!--Xử lí và tính toán // Phan Phú Huy   -->
 </LinearLayout>
 
