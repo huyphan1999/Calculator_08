@@ -7,7 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
+import android.widget.Toast;
+//Xử lý và tính toán -- Phan Phú Huy
 public class MainActivity extends AppCompatActivity {
     private char operator;
     private double result = 0;
@@ -136,19 +137,18 @@ public class MainActivity extends AppCompatActivity {
         cancel.setOnClickListener(calculatorListener);
     }
 
-
+    //Get number on screen
     public double getCalScreen() {
         double temp;
         try {
             temp = Double.parseDouble(calculatorScreen.getText().toString());
         } catch (Exception ref) {
-            // code xử lý ngoại lệ
             temp = 0;
         }
         return temp;
     }
 
-
+    // Set all to default
     public void clearAll(){
         operator = 'i';
         result = 0;
@@ -156,6 +156,7 @@ public class MainActivity extends AppCompatActivity {
         calculatorScreen.setText("0");
     }
 
+    //Handle click event
     public void onClickNubmer(String number) {
         if (isClear) {
             calculatorScreen.append(number);
@@ -167,6 +168,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+
+    //Calculate result
     public double cal() {
         switch (operator) {
             case '+':
@@ -181,6 +185,14 @@ public class MainActivity extends AppCompatActivity {
             case '/':
                 if (getCalScreen() != 0) {
                     result /= getCalScreen();
+                }
+                //Divided by zero
+                else{
+                    operator = 'i';
+                    result = 0;
+                    isClear=false;
+                    Toast.makeText(getApplicationContext(),"Không thể chia cho 0",
+                            Toast.LENGTH_SHORT).show();
                 }
                 break;
             default:
