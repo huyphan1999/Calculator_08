@@ -8,6 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+
 //Xử lý và tính toán -- Phan Phú Huy
 public class MainActivity extends AppCompatActivity {
     private char operator;
@@ -149,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Set all to default
-    public void clearAll(){
+    public void clearAll() {
         operator = 'i';
         result = 0;
         isClear=false;
@@ -202,7 +206,10 @@ public class MainActivity extends AppCompatActivity {
 
         isClear=false;
 
-        calculatorScreen.setText(String.valueOf(result));
+        DecimalFormat df = new DecimalFormat("#.########");
+        df.setRoundingMode(RoundingMode.FLOOR);
+
+        calculatorScreen.setText(String.valueOf(df.format(result)));
 
         return result;
     }
